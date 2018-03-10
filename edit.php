@@ -52,9 +52,7 @@ if($_GET['id']) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
         <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-
-
- <link rel="stylesheet" type="text/css" href="css/editStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/create_edit_Style.css">
 
 </head>
 
@@ -73,113 +71,91 @@ if($_GET['id']) {
         </header>
  
 
-<fieldset>
+<div class="event text-center col-12">
+    
+    <h4>Edit Event</h4> 
 
-    <legend>Edit Event</legend>
+</div>
 
- 
+  
+
+ <div class="box container-fluid col-10">
+     
 
     <form action="actions/a_edit.php" method="post">
 
-        <table cellspacing="0" cellpadding="0">
+        <div class="box1 row">
+            <h5>Event Name:</h5>
+            <input type="text" name="event_name" placeholder="Event Name" value="<?php echo $data['e_name'] ?>" />
 
-            <tr>
+        </div> 
 
-                <th>Event Name</th>
+        <div class="box2 row">
+            <h5>Event Start Date:</h5>
+            <input type="text" name="event_start_date" placeholder="Event Start Date" value="<?php echo $data['e_start_date'] ?>" />
+        </div>
 
-                <td><input type="text" name="event_name" placeholder="Event Name" value="<?php echo $data['e_name'] ?>" /></td>
+        <div class="box3 row">        
+            <h5>Event End Date:</h5>
+            <input type="text" name="event_end_date" placeholder="Event End Date" value="<?php echo $data['e_end_date'] ?>" />
+        </div>
 
-            </tr>     
+        <div class="box4 row">
+            <h5>Event Descreption:</h5>
+            <textarea type="text" class="descreption" name="event_descreption" placeholder="Event Descreption" value=""><?php echo $data['e_descreption'] ?></textarea>
+        </div>
 
-            <tr>
+        <div class="box5 row">
+            <h5>Event image:</h5>
+            <input type="text" name="event_image" placeholder="Event image(url)" value="<?php echo $data['e_image'] ?>" />
+        </div>
 
-                <th>Event Start Date</th>
+        <div class="box6 row">
+            <h5>Event Contact Email:</h5>
+            <input type="text" name="event_contact_email" placeholder="Event Contact Email" value="<?php echo $data['e_contact_email'] ?>" />
+        </div>
 
-                <td><input type="text" name="event_start_date" placeholder="Event Start Date" value="<?php echo $data['e_start_date'] ?>" /></td>
+        <div class="box7 row">
+            <h5>Event Phone Number:</h5>
+            <input type="text" name="event_phone_number" placeholder="Event Phone Number" value="<?php echo $data['e_phone_number'] ?>" />
+        </div>
 
-            </tr>
+        <div class="box8 row">
+            <h5>Event Address:</h5>
+            <input type="text" name="event_address" placeholder="Event Address" value="<?php echo $data['e_address'] ?>" />
+        </div>
 
-            <tr>
+        <div class="box9 row">          
+            <h5>Event Url:</h5>
+            <input type="text" name="event_url" placeholder="Event Url" value="<?php echo $data['e_url'] ?>" />
+        </div>
 
-                <th>Event End Date:</th>
+        <div class="box10 row">         
+            <h5>Event Type:</h5>
+            <input type="text" name="event_type" placeholder="Event Type" value="<?php echo $data['e_type'] ?>" />
+        </div>
 
-                <td><input type="text" name="event_end_date" placeholder="Event End Date" value="<?php echo $data['e_end_date'] ?>" /></td>
+        <div class="box11 row">          
+            <h5>Event Capacity:</h5>
+            <input type="text" name="event_capacity" placeholder="Event Capacity" value="<?php echo $data['e_capacity'] ?>" />
+        </div>                                                                                                    
 
-            </tr>
-            <tr>
+        <div class="box12 row">
+            <input type="hidden" name="id" value="<?php echo $data['event_id']?>" />
+            <button type="submit">Save Changes</button>
+            <a href="events.php"><button type="button">Back</button></a>
+        </div>
 
-                 <th>Event Descreption:</th>
 
-                <td><input type="text" name="event_descreption" placeholder="Event Descreption" value="<?php echo $data['e_descreption'] ?>" /></td>
-
-            </tr>
-            <tr>
-
-                <th>Event image:</th>
-
-                <td><input type="text" name="event_image" placeholder="Event image(url)" value="<?php echo $data['e_image'] ?>" /></td>
-
-            </tr>
-            <tr>
-
-                <th>Event Contact Email:</th>
-
-                <td><input type="text" name="event_contact_email" placeholder="Event Contact Email" value="<?php echo $data['e_contact_email'] ?>" /></td>
-
-            </tr>
-            <tr>
-
-                <th>Event Phone Number:</th>
-
-                <td><input type="text" name="event_phone_number" placeholder="Event Phone Number" value="<?php echo $data['e_phone_number'] ?>" /></td>
-
-            </tr>
-            <tr>
-
-                <th>Event Address:</th>
-
-                <td><input type="text" name="event_address" placeholder="Event Address" value="<?php echo $data['e_address'] ?>" /></td>
-
-            </tr>
-            <tr>
-
-                <th>Event Url:</th>
-
-                <td><input type="text" name="event_url" placeholder="Event Url" value="<?php echo $data['e_url'] ?>" /></td>
-
-            </tr>
-             <tr>
-
-                <th>Event Type:</th>
-
-                <td><input type="text" name="event_type" placeholder="Event Type" value="<?php echo $data['e_type'] ?>" /></td>
-
-            </tr>
-             <tr>
-
-                <th>Event Capacity:</th>
-
-                <td><input type="text" name="event_capacity" placeholder="Event Capacity" value="<?php echo $data['e_capacity'] ?>" /></td>
-
-            </tr>                                                                                            
-            <tr>
-
-                <input type="hidden" name="id" value="<?php echo $data['event_id']?>" />
-
-                <td><button type="submit">Save Changes</button></td>
-
-                <td><a href="events.php"><button type="button">Back</button></a></td>
-
-            </tr>
-
-        </table>
+        
 
     </form>
 
- 
+ </div>
 
-</fieldset>
 
+
+                    
                 <footer id="footer">
                     <div>   
                          2017-2018 &copy; | Vienna
