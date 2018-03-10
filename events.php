@@ -45,7 +45,7 @@
 
         </header>
         <div class="nav col-lg-12">
-        	<a class="create" href="create.php"><i class="fas fa-plus-circle">&nbsp;</i>Create Event</a>
+        	<a href="create.php"><button class="create btn info" type="button"><i class="fas fa-plus-circle"></i>&nbsp;Create Event</button></a>
         </div>
 		<hr>
        <div class=" col-lg-12 col-md-12 col-sm-12">
@@ -81,10 +81,10 @@
 					<input id="visit" type='hidden' name='event_url' value="<?=$row['e_url']?>">
 					<input id="visit" type='hidden' name='event_type' value="<?=$row['e_type']?>">
 					<input id="visit" type='hidden' name='event_capacity' value="<?=$row['e_capacity']?>">
-					<input class="button" id="visit" type='submit' name='eventevisit' value="View Event">
+					<input class="button btn success" id="visit" type='submit' name='eventevisit' value="View Event">
 					<?php echo
-					"<a href='edit.php?id=". $row['event_id'] ."'><button class='edit' type='button'><i class='fas fa-edit'>&nbsp;</i>Edit</button></a>
-					<a href='delete.php?id=". $row['event_id'] ."'><button class='delete' type='button'><i class='fas fa-trash-alt'>&nbsp;</i>Delete</button></a>";
+					"<a href='edit.php?id=". $row['event_id'] ."'><button class='edit btn warning' type='button'><i class='fas fa-edit'>&nbsp;</i>Edit</button></a>
+					<a href='delete.php?id=". $row['event_id'] ."'><button class='delete btn danger' type='button'><i class='fas fa-trash-alt'>&nbsp;</i>Delete</button></a>";
 					 ?>
 		</div>
 			</form>
