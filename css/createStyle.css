@@ -1,0 +1,161 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    background: #222;
+}
+
+
+#logo {
+
+    margin-top: 3px;
+    margin-bottom: 1px;
+    margin-left: 10px;
+    width: 4%;
+
+}
+
+#header div {
+
+    margin-top: 20px;
+    float: right;
+    margin-right: 10px;
+
+}
+
+h3{
+    color:  #232F3E !important;
+    margin-top: 25px;
+    vertical-align: top;
+    font-family: 'Signika', sans-serif;
+
+}
+.row h4 {
+    padding-top: 0px !important;
+    padding-bottom:   0px !important;
+    color:  #232F3E 
+}
+
+h3 , #logo {
+
+    display: inline-block;
+}
+
+
+#header {
+
+    padding-top: 1px;
+    padding-bottom: 3px;
+    background-color: ivory;
+    
+}
+
+h4 {
+
+   color: white;
+}
+
+
+.event {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+h5{
+    padding-right: 20px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+
+input {
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        width: 300px;
+        border: 1px solid white;
+        border-radius: 3px;
+}
+
+
+.image {
+    height: auto;
+}
+
+.descreption {
+    margin-bottom: 20px;
+    padding-bottom: 5px;    
+    border: 1px solid white;
+    border-radius: 3px;
+    resize: none;
+    padding-bottom: 15%; 
+    width: 300px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8,
+.box9,
+.box10,
+.box11
+ {
+        display: flex;
+        justify-content: space-between;
+}
+
+.box12 {
+        justify-content:  flex-end;
+}
+
+
+button{
+    margin-top: 6px;
+    margin-right: 3px;
+    border: 1px solid black;
+    color: #222;
+    background:white;
+    border-radius: 3px;
+    font-size: 18px; 
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: ivory;
+    text-align: center;
+}
+
+
+#footer div {
+    color: black;
+    margin: 0 auto; 
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.3rem;
+}   

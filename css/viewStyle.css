@@ -1,0 +1,129 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    background-color: #111;
+}
+
+
+p {
+    margin-bottom: 0px !important;
+}
+
+
+#logo {
+
+    margin-top: 3px;
+    margin-bottom: 1px;
+    margin-left: 10px;
+    width: 4%;
+
+}
+
+#header div {
+
+    margin-top: 20px;
+    margin-right: 10px;
+    float: right;
+
+
+}
+
+#header h3 {
+    padding-left: 0px !important;
+    color:  #232F3E;
+    margin-top: 25px;
+    vertical-align: top;
+    font-family: 'Signika', sans-serif;
+
+}
+
+
+h3 , #logo {
+
+    display: inline-block;
+}
+
+
+#header {
+
+    padding-top: 1px;
+    padding-bottom: 3px;
+    background-color: ivory;
+    
+}
+
+ .box img {
+    width: 500px;
+    height: 450px;
+}
+
+.mainbox {
+
+     margin-left:0px;
+    padding-top: 20px;
+}
+
+.box2 {
+    
+    vertical-align: top;
+}
+
+.box3 {
+    padding-top: 5%;
+}
+
+h1 , h6{
+
+   margin-left: 5px;  
+}
+
+h1 , h3 , h6 , p ,span  {
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
+
+}
+
+h3, h6 {
+    padding-left: 10px;
+}
+
+.button {
+    text-align: center;
+}
+
+button {
+    border:1px solid black;
+    border-radius: 2px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: ivory;
+    text-align: center;
+}
+
+
+#footer div {
+    color: black;
+    margin: 0 auto; 
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.3rem;
+}   
