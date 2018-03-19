@@ -4,7 +4,7 @@ html {
 }
 
 
-body{
+body {
      position: relative;
     margin: 0;
     padding-bottom: 6rem;
@@ -29,7 +29,7 @@ body{
 
 }
 
-h3{
+h3 {
 	color:  #232F3E;
     margin-top: 25px;
     vertical-align: top;
@@ -52,7 +52,7 @@ h3 , #logo {
 	
 }
 
-h1{
+h1 {
     color: white;
 }
 
@@ -62,7 +62,7 @@ h1{
 }
 
 
-button{
+button {
     margin-top: 6px;
     margin-right: 3px;
     border: 1px solid black;
@@ -72,7 +72,7 @@ button{
     font-size: 18px; 
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
 }
 

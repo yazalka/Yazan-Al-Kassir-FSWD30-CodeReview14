@@ -20,7 +20,7 @@ if(isset($_SESSION['name'])){   // if logged in cant go to home page
           $error = false;
 
 
-  //validtion for first name
+         //validtion for first name
 
         if (!$first_name) {
 
@@ -134,7 +134,7 @@ if(isset($_SESSION['name'])){   // if logged in cant go to home page
 
         $check = "select * from users where email='$email' and password='$password'";
 
-        $result=mysqli_query($conn , $check)or die("Failed to query databases");
+        $result = mysqli_query($conn , $check)or die("Failed to query databases");
 
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -144,11 +144,11 @@ if(isset($_SESSION['name'])){   // if logged in cant go to home page
 
                       header('location: events.php');
 
-                     } else {
+                     }  else {
 
-                        $signin_error = "<p>*User does not exist.</p>";
+                          $signin_error = "<p>*User does not exist.</p>";
 
-                     }
+                       }
 
       }
 
@@ -167,6 +167,7 @@ if(isset($_SESSION['name'])){   // if logged in cant go to home page
       <title>Home Page</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="css/indexStyle.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -182,53 +183,86 @@ if(isset($_SESSION['name'])){   // if logged in cant go to home page
           <h3>Vienna</h3>
 
         </header>
+       
+          
+            
+        <div class="container-fluid row" style="margin-right: 0px;">
 
-       <div class="row" style="margin-right: 1px;">
-            <div id="card" class="col-lg-7 col-md-7 col-sm-12">
-              <h1>Search over 10000 Events in Vienna</h1>
-              <div id="content">Please Sign Up To View The Events In Vienna.</div>
-              <div>
-                <input id="signin_botton" type="submit" name="" value="Sign in">
-                <input id="register_botton" type="submit" name="" value="Register">
+              <div id="box1" class="col-lg-6 col-md-12 col-sm-12 col-12"> 
+
+                <div id="card">
+                  <h1>Search over 10000 Events in Vienna</h1>
+                  <div id="content">Please Sign Up To View The Events In Vienna.</div>
+                  <div>
+                    <input id="signin_botton" type="submit" name="" value="Sign in">
+                    <input id="register_botton" type="submit" name="" value="Register">
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-               <!-- register-->
-               <div id="register_form" <?php if (isset($error)): ?>
-                style="display: block;"
-               <?php endif ?>>
-                <form action="" method="post">
-                  <div>
-                    <input type="text" name="first_name" placeholder="First name">
-                    <?php if (isset($error_first_name)){echo $error_first_name;} ?>
+
+
+
+            <!-- register-->
+            <div class="formscontainer col-lg-6 col-md-12 col-sm-12 col-12">
+              
+
+              <div id="box2" class="col-lg-12 col-md-12 col-sm-12 col-12">
+
+                <div <?php if (isset($error)): ?> style="display: block;" <?php endif ?> id="register_form">
+
+
+                      <form action="" method="post">
+                      <div>
+                        <input type="text" name="first_name" placeholder="First name">
+                        <?php if (isset($error_first_name)){echo $error_first_name;} ?>
+                      </div>
+                      <div>
+                        <input type="text" name="last_name" placeholder="Last name">
+                        <?php if (isset($error_last_name)){echo $error_last_name;} ?>
+                      </div>
+                      <div>
+                        <input type="text" name="email" placeholder="Email">
+                      <?php if (isset($error_email)){echo $error_email;} ?>
+                        </div>
+                      <div>
+                        <input type="password" name="password" placeholder="Password">
+                        <?php if (isset($error_password)){echo $error_password;} ?>
+                      </div>
+                      <div class="signup">
+                        <input class="register_botton" type="submit" name="register" value="Sign Up">
+                      </div>                     
+                       <?php if (isset($error_register)){echo $error_register;} ?> 
+                      </form>
+
+                   </div>
+
+                   </div>
+        
+
+              <!--signin -->
+          <div id="box3" class="col-lg-12 col-md-12 col-sm-12 col-12">
+              <div id="signin_form"   <?php if (isset($_POST['signin'])): ?> style="display: block;"<?php endif ?>>
+                  
+              <form action="" method="post">
+                  <input id="email" type="text" name="email" placeholder="Email">
+                  <input id="password" type="password" name="password" placeholder="Password">
+                  <div class="signin">               
+                    <input class="signin_botton" type="submit" name="signin" value="Log In">
                   </div>
-                  <div>
-                    <input type="text" name="last_name" placeholder="Last name">
-                    <?php if (isset($error_last_name)){echo $error_last_name;} ?>
-                  </div>
-                  <div>
-                    <input type="text" name="email" placeholder="Email">
-                    <?php if (isset($error_email)){echo $error_email;} ?>
-                  </div>
-                  <div>
-                    <input type="password" name="password" placeholder="Password">
-                    <?php if (isset($error_password)){echo $error_password;} ?>
-                  </div>
-                    <input class="register_botton" type="submit" name="register">
-                    <?php if (isset($error_register)){echo $error_register;} ?>
-                </form>
-              </div>
-              <div id="signin_form" <?php if (isset($signin_error)): ?>
-                  style="display: block;"
-                 <?php endif ?>>
-                  <!--signin -->
-                  <form action="" method="post">
-                    <input type="text" name="email" placeholder="Email">
-                    <input type="password" name="password" placeholder="Password">
-                    <input class="signin_botton" type="submit" name="signin">
+
                     <?php if (isset($signin_error)){echo $signin_error;} ?>
-                  </form>
-          </div>
+              </form>
+           </div>
+
+        </div>
+    </div>  
+
+</div>
+
     </body>
 
    </html>
+
+   
+ 
+         
